@@ -1,0 +1,310 @@
+body
+{
+    background-image:url("https://img.freepik.com/free-photo/abstract-solid-shining-yellow-gradient-studio-wall-room-background_1258-71102.jpg?w=2000");
+    display:flex;
+    flex-direction:column;
+}
+
+/* for first nav bar */
+#carticon
+{
+    color:white;
+    height:60px;
+    width:60px;
+}
+.logo
+{
+    background-color:black;
+    display:flex;
+    justify-content:space-around;
+    border: 2px solid white;
+    color:white;
+    align-items:center;
+    height:70px;
+}
+.border:hover
+{
+    border:solid white 1px;
+}
+.label
+{
+    display:inline-block;
+    color:white;
+}
+.unorderlist1
+{ 
+    text-decoration: none;
+    float: right;
+    margin:none;
+    color:white;
+}
+li
+{
+    display: inline-block;
+    margin: -100px 5px;
+}
+
+
+/* for second nav bar */
+.navbar2
+{
+    display:flex;
+    background-color: rgb(3, 3, 59);
+    color:white;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid white;
+    height:70px;
+}
+.items{
+    display:flex;
+    justify-content:center;
+}
+
+
+/*for the name and password form*/
+.passform
+{
+    display:flex;
+    justify-content: center;
+    align-content:center;
+    width:100%;
+    text-align: center;
+}
+.formcolor
+{
+    
+    background-color: #f1f1f1;
+}
+.form1
+{
+    margin-bottom: 30px;
+}
+#message 
+{
+    display:none;
+    background: #f1f1f1;
+    color: #000;
+    position: relative;
+    padding: 20px;
+    margin-top: 10px;
+}  
+  #message p
+{
+    padding: 10px 35px;
+    font-size: 18px;
+}
+/* Add a green text color and a checkmark when the requirements are right */
+ .valid
+{
+    color: green;
+}
+.valid:before 
+{
+    position: relative;
+    left: -35px;
+    content: "✔";
+}  
+/* Add a red text color and an "x" when the requirements are wrong */
+ .invalid
+{
+    color: red;
+}
+.invalid:before 
+{
+    position: relative;
+    left: -35px;
+    content: "✖";
+}
+
+
+/*for image and text at top*/
+.container
+{
+    position:relative;
+    text-align: center;
+    color:white;
+}
+.centered 
+{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin-top:3em;
+}
+.imageid
+{
+   object-position:center top;
+   opacity: 1.0;
+   height:400px;
+   width:100%;
+    
+}
+.imageid:hover
+{
+    opacity: 0.5;
+}
+
+
+/* for main project part now */
+.project
+{
+    text-align: center;
+    color: black;
+}
+.form
+{
+    display:flex;
+    flex-direction:column;
+}
+h5
+{
+    margin-bottom: 60px;
+}
+.para
+{
+    padding-top:100px;
+}
+.card
+{
+    width:100%;
+}
+.image
+{
+    width:100%;
+}
+
+
+/* for the middle images */
+.heading
+{
+    text-align:left;
+    margin:20px;
+    padding:10px;
+}
+.thumbnail
+{
+    display:grid;
+    grid-template-columns: repeat(6, auto);
+    grid-auto-rows: minmax(100px, auto);
+    /* justify-items: center; */
+    gap:20px;
+    margin-left:20px;
+}
+.thumbanailhover:hover
+{
+    opacity:0.5;
+}
+.mainmatter
+{
+    background-color: rgb(204, 96, 20);
+
+}
+.thumbnail2
+{
+    display:grid;
+    grid-template-columns: repeat(4,auto);
+    grid-auto-rows: minmax(100px, auto);
+    justify-items:flex-end;
+    gap:20px;
+    margin:50px;
+}
+.card2
+{
+    width:100%;
+}
+.image2
+{
+    width:100%;
+    height:60%;
+}
+.bigsale
+{
+    padding:0;
+    margin:0;
+}
+.jssection
+{
+    display:grid;
+    grid-template-columns:repeat(3,auto);
+    grid-auto-rows:minmax(100px,auto);
+    gap:20px;
+    margin:50px;
+}
+
+
+/*for the footer*/
+.footer
+{
+    float: bottom;
+    padding-top:200px;
+}
+.footerimage
+{
+    height:70px;
+    width:70px;
+}
+
+
+/* //media commands for displaying page differently at different width */
+@media screen and (max-width:500px)
+{
+    body
+    {
+        background-color:lightgoldenrodyellow;
+        background-image: none;
+    }
+    .bar-icon
+    {
+        display: block;
+        float: right;
+        position: relative;
+        top: -70px;
+        font-size:10px;
+    }
+    li 
+    {
+        display: block;
+        margin:0;
+        text-align:center;
+        color: white;
+    }
+    ul
+    {
+        text-decoration: none;
+        width: 100%;
+        float:none;
+        margin:0;
+    }
+    .project
+    {
+        font-size:10px;
+        margin-bottom:5px;
+    }
+    .sale
+    {
+        float:none;
+        color:bisque;
+        font-size:5px;
+        padding:none;
+        width:100%;
+    }
+    .mainmatter
+    {
+        padding-left:none;
+        padding-right:200px;
+    }
+    h5
+    {
+        margin-bottom: 15px;
+    }
+    .image
+    {
+        border:none;
+        width:70%;
+        height:70px;
+        text-align:left;
+        margin:none;
+    }
+}

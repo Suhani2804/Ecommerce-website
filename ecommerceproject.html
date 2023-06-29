@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project</title>
+    <link rel="stylesheet" href="ecommerceproject.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="ecommerceproject.js" defer></script>
+</head>
+<body>
+
+<!-- navigation bar 1 -->
+<nav class="logo">
+    <label class="label border"> eCommerce Site</label>
+    <!-- Search icon on navbar 1 -->
+    <!-- button to search items -->
+    <form>
+        <label class="border" ></label>
+        <input id="search" type="text" placeholder="Search"></input>
+        <!--WE GIVE THE CLASS IN BELOW COMMAND AS btn so in javascript we will write const button=getelementsbyclass="btn" -->
+        <button type="button" class="btn btn-primary"><i class="fa fa-search" aria-hidden="true"></i></button>
+    </form>
+    <ul class="unorderlist1">
+            <li class="border">Home</li>            
+            <li class="border">Cart</li>
+            <li class="border">My orders</li>
+            <li class="border">About</li>
+            <i class="fa-regular fa-cart-shopping border" id="carticon"></i>
+            <li class="border">Cart</li>
+    </ul>  
+ </nav>
+
+<!-- for navbar 2 -->
+<nav class="navbar2">
+    <label class="Customer"> </label>
+    <div class="items">
+    <ul>
+        <li class="border" style="margin: 20px">All</li>            
+        <li class="border" style="margin: 20px">Deals</li>
+        <li class="border" style="margin: 20px">Best sellers</li>
+        <li class="border" style="margin: 20px">Sell</li>
+        <li class="border" style="margin: 20px">Buy</li>
+        <li class="border" style="margin: 20px">Special Members</li>
+        <li class="border" style="margin: 20px">Customer Service</li>
+        <li class="border" style="margin: 20px">Help</li>
+        <i class="fa fa-bars" aria-hidden="true" style="margin: 20px">  More options </i>
+    </ul></div>
+</nav>
+
+<main>
+<!-- for name and password -->
+<div class="passform formcolor">
+<form class="form1" > 
+    <label>Enter Name</label>
+    <input id="nameid" type="text"></input>
+    <label>Password</label>
+    <input id="psw" type="password"></input>
+<!-- 
+//IMPRT BUTTON LIBRARY FROM INTERNET FOR SUBMIT BUTTON HERE
+just type in button bootstrap to access this specific command -->
+<!-- in the below command we have given class as btn2 to distinguish between btn and btn2 while writing javascript commands  -->
+    <button type="button" class="btn3 btn-primary" style="margin-top :2em;">Submit</button>
+    <button type = "reset" value = "Reset" >Reset</button>
+</form> 
+</div>
+<div id="message">
+    <h3>Password must contain the following:</h3>
+    <p id="letter" class="invalid">A <b>lowercase</b> letter</p>
+    <p id="capital" class="invalid">A <b>capital (uppercase)</b> letter</p>
+    <p id="number" class="invalid">A <b>number</b></p>
+    <p id="length" class="invalid">Minimum <b>8 characters</b></p>
+    <p id="specialchar" class="invalid">A <b>special character</b></p>
+  </div>
+
+<!-- for text on image and the image at top -->
+<div class="container">
+<img class="imageid" src="https://img.freepik.com/premium-photo/top-view-online-shopping-concept-with-credit-card-smart-phone-computer-isolated-office-yellow-table-background_315337-5991.jpg">
+<section class="project">
+    <div class="centered">
+    <h1>Welcome to the Biggest eCommerce site!</h1>
+    <h1>"Dream eCommerce"</h1>
+    <h5>Hope you have a great time browsing the website :)</h5>
+</div>
+
+<!-- the form for entering name and product
+button to submit the details -->
+<form class="form" >
+    <span>
+        <label>Enter Image URl</label>
+        <input id="imageId" type="text"></input>
+        <label>Enter Product</label>
+        <input id="descriptionId" type="text"></input>
+<!-- 
+        //IMPRT BUTTON LIBRARY FROM INTERNET FOR SUBMIT BUTTON HERE
+        just type in button bootstrap to access this specific command -->            
+        <!-- in the below command we have given class as btn2 to distinguish between btn and btn2 while writing javascript commands -->
+        <button type="button" class="btn2 btn-primary" style="margin-top :2em;">Submit</button>
+        <button type = "reset" value = "Reset" >Reset</button>
+    </span>
+</form>
+</div>
+      
+<!-- the section below the image -->
+<section class="mainmatter">
+    <!-- heading on top of that section -->
+<div class="heading">
+    <p style="color:white; font-size:30px; ">
+                Today's deals
+    </p>
+</div>
+
+ <!-- the four images below -->
+ <section class="thumbnail">
+    <div class="card thumbanailhover">
+    <img class="image" src="https://www.edesk.com/wp-content/uploads/2021/03/find-trending-products-sell-ecommerce.png">
+    <p style="text-align:center; color: white" >
+        Buy
+    </p>
+    </div>
+    <div class="card thumbanailhover">
+        <img class="image" src="https://www.edesk.com/wp-content/uploads/2021/03/find-trending-products-sell-ecommerce.png">
+         <p style="text-align:center; color: white">
+            Sell
+        </p>
+    </div>
+    <div class="card thumbanailhover">
+        <img class="image" src="https://www.edesk.com/wp-content/uploads/2021/03/find-trending-products-sell-ecommerce.png">
+            <p style="text-align:center; color: white">
+                Deals of the day
+            </p>
+    </div>
+    <div class="card thumbanailhover">
+        <img class="image" src="https://www.edesk.com/wp-content/uploads/2021/03/find-trending-products-sell-ecommerce.png">
+            <p style="text-align:center; color: white">
+                70% off
+            </p>
+    </div>
+</section>
+
+<!-- /*thumbnail2*/ -->
+<div class="thumbnail2">
+    <div class="card2 thumbanailhover">
+        <img class="image2" src="https://static.helpjuice.com/helpjuice_production/uploads/upload/image/4752/direct/1585157958423-Customer%20Support.png">
+        <p style="text-align:center; color: white">
+            Customer Support
+        </p>
+    </div>
+    <div class="card2 thumbanailhover">
+    <img class="image2" src="https://www.edesk.com/wp-content/uploads/2021/03/find-trending-products-sell-ecommerce.png">
+        <p style="text-align:center; color: white">
+            Deals of the day
+        </p>
+    </div>
+</div>
+<h1 class="bigsale">The Big Sale day is here!</h1>
+<p class="paraclass">
+    <b>Sale 50% flat on all items</b> listen on website for next 24 hours.
+    Buy <b>products worth 5000 to earn gift vouchers</b> and more.<b>Shopping worth 
+        7500</b> 
+    makes you eligible for a cashback
+     worth whopping 1500 along with gift vouchers.
+    So don't miss this opportunity
+     and grab the best deals here only at 
+    Dream Ecommerce site!
+    Enjoy shopping for your favourite items!
+</p>
+</section>
+<!-- for the imported products below the images -->
+<section class="jssection">
+</section>
+</main>
+</body>
+
+<!-- for footer part of the page -->
+<footer class="footer">    
+    <p  class="para">Thankyou for visiting this site. Hope you had a great time!</p>
+    <a href="#"><img class="footerimage" src="https://cdn3.vectorstock.com/i/1000x1000/94/87/back-to-top-arrow-sign-icon-scroll-up-symbol-vector-4029487.jpg"></a>
+</footer>
+</html>
