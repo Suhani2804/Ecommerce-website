@@ -27,7 +27,7 @@ fetch("https://dummyjson.com/products")
 });  
 function filterProducts(searchText) {
   let filteredProducts = products.filter((product) =>
-    product.title.includes(searchText)
+    product.title.toLowerCase().includes(searchText.toLowerCase())
   );
 
   for (var i = 0; i < children.length; i++) {
