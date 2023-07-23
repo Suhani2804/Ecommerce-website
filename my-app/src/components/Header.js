@@ -1,6 +1,5 @@
 import { useState } from "react";
 
-
 const HeaderComponent=()=>{
 
     const [buttonText, setButtonText] = useState("Login");
@@ -11,6 +10,7 @@ const HeaderComponent=()=>{
           setButtonText("Login");
         }
       }
+    
     
 
     return(
@@ -65,8 +65,8 @@ const HeaderComponent=()=>{
     <label>Enter Name</label>
     <input id="nameid" type="text"></input>
     <label>Password</label>
-    <input id="psw" type="password"></input>
- 
+    <input id="psw" type="password" ></input>
+    
 {/* //IMPRT BUTTON LIBRARY FROM INTERNET FOR SUBMIT BUTTON HERE
 just type in button bootstrap to access this specific command -->
 <!-- in the below command we have given class as btn2 to distinguish between btn and btn2 while writing javascript commands  --> */}
@@ -87,26 +87,12 @@ just type in button bootstrap to access this specific command -->
 </div>
 </section>
 
-{/* <!-- the form for entering name and product
-button to submit the details --> */}
-{/* <form class="form" >
-    <span>
-        <label style={{color: "black", margin:"10px"}}>Enter Image URl</label>
-        <input id="imageId" type="text"></input>
-        <label style={{color: "black", margin:"10px"}}>Enter Product</label>
-        <input id="descriptionId" type="text"></input> */}
 
-        {/* //IMPRT BUTTON LIBRARY FROM INTERNET FOR SUBMIT BUTTON HERE
-        just type in button bootstrap to access this specific command -->            
-        <!-- in the below command we have given class as btn2 to distinguish between btn and btn2 while writing javascript commands --> */}
-        {/* <button type="button" className="btn2 btn-primary">Submit</button>
-        <button type = "reset" value = "Reset" >Reset</button>
-    </span> */}
-{/* </form> */}
 </div>
 </main>
 </>
 );
 };
+
 
 export default HeaderComponent;
