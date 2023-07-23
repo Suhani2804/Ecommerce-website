@@ -1,6 +1,23 @@
+import { useState } from "react";
+import { restaurants } from "../common/restaurants";
+import RestaurantCard from "./RestaurantCard";
+import SearchComponent from "./Search";
+
+
 const BodyComponent=()=>{
+    // const url="https://dummyjson.com/products";
+    const [filteredRestaurantsArray, setFilteredRestaurants] =
+    useState(restaurants);
+    function filteredRestaurants(restaurants) {
+        setFilteredRestaurants(restaurants);
+      }
     return(
         <>
+        <div className="filter-search-bar flexsearch">
+        <SearchComponent filteredRestaurants={filteredRestaurants} />
+        <button className="top-rated ">Top Rated Restaurants</button>
+      </div>
+
         <section className="mainmatter">
         {/* <!-- heading on top of that section --> */}
     <div className="heading">
@@ -65,9 +82,11 @@ const BodyComponent=()=>{
         Enjoy shopping for your favourite items!
     </p>
     </section>
-    {/* <!-- for the imported products below the images --> */}
-    <section className="jssection">
-    </section> 
+    <div className="res-container">
+        {filteredRestaurantsArray.map((restaurant) => (
+          <RestaurantCard key={restaurant.id} res_details={restaurant} />
+        ))}
+      </div>
     </>
     );
 };

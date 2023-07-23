@@ -1,3 +1,6 @@
+
+
+
 const HeaderComponent=()=>{
     return(
     <>
@@ -35,7 +38,7 @@ const HeaderComponent=()=>{
         <li className="border">Special Members</li>
         <li className="border">Customer Service</li>
         <li className="border">Help</li>
-        <i className="fa fa-bars" aria-hidden="true">  More options </i>
+        <li className="border">More options</li>
     </ul></div>
 </nav>
 
@@ -79,9 +82,9 @@ just type in button bootstrap to access this specific command -->
 button to submit the details --> */}
 <form class="form" >
     <span>
-        <label>Enter Image URl</label>
+        <label style={{color: "black", margin:"10px"}}>Enter Image URl</label>
         <input id="imageId" type="text"></input>
-        <label>Enter Product</label>
+        <label style={{color: "black", margin:"10px"}}>Enter Product</label>
         <input id="descriptionId" type="text"></input>
 
         {/* //IMPRT BUTTON LIBRARY FROM INTERNET FOR SUBMIT BUTTON HERE
