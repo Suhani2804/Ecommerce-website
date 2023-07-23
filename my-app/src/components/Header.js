@@ -1,7 +1,18 @@
-
+import { useState } from "react";
 
 
 const HeaderComponent=()=>{
+
+    const [buttonText, setButtonText] = useState("Login");
+    function updateLoginLogoutText() {
+        if (buttonText === "Login") {
+          setButtonText("Logout");
+        } else {
+          setButtonText("Login");
+        }
+      }
+    
+
     return(
     <>
     {/* // <!-- navigation bar 1 --> */}
@@ -9,12 +20,13 @@ const HeaderComponent=()=>{
     <label className="label border"> eCommerce Site</label>
     {/* <!-- Search icon on navbar 1 -->
     <!-- button to search items --> */}
-    <form className="searchform">
+    {/* <form className="searchform">
         <label className="border" ></label>
-        <input id="search" type="text" placeholder="Search"></input>
+        <input id="search" type="text" placeholder="Search"></input> */}
         {/* <!--WE GIVE THE CLASS IN BELOW COMMAND AS btn so in javascript we will write const button=getelementsbyclass="btn" --> */}
-        <button type="button" className="btn btn-primary"><i class="fa fa-search" aria-hidden="true"></i></button>
-    </form>
+        {/* <button type="button" className="btn btn-primary"><i class="fa fa-search" aria-hidden="true"></i></button>
+    </form> */}
+    
     <ul className="unorderlist1">
             <li className="border">Home</li>            
             <li className="border">Cart</li>
@@ -22,7 +34,11 @@ const HeaderComponent=()=>{
             <li className="border">About</li>
             <i className="fa-regular fa-cart-shopping border" id="carticon"></i>
             <li className="border">Cart</li>
-    </ul>  
+    </ul>
+
+    <button className="login-button" onClick={updateLoginLogoutText}>
+        {buttonText}
+      </button>  
  </nav>
 {/* 
 <!-- for navbar 2 --> */}
@@ -58,14 +74,7 @@ just type in button bootstrap to access this specific command -->
     <button type = "reset" value = "Reset" >Reset</button>
 </form> 
 </div>
-<div id="message">
-    <h3>Password must contain the following:</h3>
-    <p id="letter" className="invalid">A <b>lowercase</b> letter</p>
-    <p id="capital" className="invalid">A <b>capital (uppercase)</b> letter</p>
-    <p id="number" className="invalid">A <b>number</b></p>
-    <p id="length" className="invalid">Minimum <b>8 characters</b></p>
-    <p id="specialchar" className="invalid">A <b>special character</b></p>
-  </div>
+
 
 {/* <!-- for text on image and the image at top --> */}
 <div className="container">
@@ -80,20 +89,20 @@ just type in button bootstrap to access this specific command -->
 
 {/* <!-- the form for entering name and product
 button to submit the details --> */}
-<form class="form" >
+{/* <form class="form" >
     <span>
         <label style={{color: "black", margin:"10px"}}>Enter Image URl</label>
         <input id="imageId" type="text"></input>
         <label style={{color: "black", margin:"10px"}}>Enter Product</label>
-        <input id="descriptionId" type="text"></input>
+        <input id="descriptionId" type="text"></input> */}
 
         {/* //IMPRT BUTTON LIBRARY FROM INTERNET FOR SUBMIT BUTTON HERE
         just type in button bootstrap to access this specific command -->            
         <!-- in the below command we have given class as btn2 to distinguish between btn and btn2 while writing javascript commands --> */}
-        <button type="button" className="btn2 btn-primary">Submit</button>
+        {/* <button type="button" className="btn2 btn-primary">Submit</button>
         <button type = "reset" value = "Reset" >Reset</button>
-    </span>
-</form>
+    </span> */}
+{/* </form> */}
 </div>
 </main>
 </>

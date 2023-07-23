@@ -1,23 +1,49 @@
-import { useState } from "react";
-import { restaurants } from "../common/restaurants";
-import RestaurantCard from "./RestaurantCard";
+import { useState,useEffect } from "react";
+import EcommerceCard from "./EcommerceCard";
 import SearchComponent from "./Search";
 
 
 const BodyComponent=()=>{
-    // const url="https://dummyjson.com/products";
-    const [filteredRestaurantsArray, setFilteredRestaurants] =
-    useState(restaurants);
-    function filteredRestaurants(restaurants) {
-        setFilteredRestaurants(restaurants);
+    const [filteredEcommerceArray, setFilteredEcommerce] =
+    useState([]);
+
+    const [allEcommerce, setAllEcommerce] = useState([]);
+    
+    function filteredEcommerce(Ecommerce) {
+        setFilteredEcommerce(Ecommerce);
       }
+
+    function filterTopRatedEcommerce(){
+        let topRatedEcommerce=filteredEcommerceArray.filter(
+            (ecommerce)=>ecommerce.rating>4
+        );
+        setFilteredEcommerce(topRatedEcommerce)
+    }
+
+    useEffect(() => {
+        console.log("useEffect called");
+        fetchData();
+      }, []);
+      async function fetchData() {
+        const result = await fetch(
+          "https://dummyjson.com/products"
+        );
+        const response = await result.json();
+        const EcommerceCards=response.products;
+        console.log(EcommerceCards);
+        setFilteredEcommerce(EcommerceCards);
+        setAllEcommerce(EcommerceCards);
+      }
+
+
     return(
         <>
         <div className="filter-search-bar flexsearch">
-        <SearchComponent filteredRestaurants={filteredRestaurants} />
-        <button className="top-rated ">Top Rated Restaurants</button>
+        <SearchComponent 
+        Ecommerce={allEcommerce}
+        filteredEcommerce={filteredEcommerce} />
+        <button className="top-rated " onClick={filterTopRatedEcommerce}>Top Rated Ecommerce</button>
       </div>
-
         <section className="mainmatter">
         {/* <!-- heading on top of that section --> */}
     <div className="heading">
@@ -25,7 +51,6 @@ const BodyComponent=()=>{
                     Today's deals
         </p>
     </div>
-    
      {/* <!-- the four images below --> */}
      <section className="thumbnail">
         <div className="card thumbanailhover">
@@ -53,7 +78,6 @@ const BodyComponent=()=>{
                 </p>
         </div>
     </section>
-    
     {/* <!-- /*thumbnail2*/ }
     <div className="thumbnail2">
         <div className="card2 thumbanailhover">
@@ -83,8 +107,8 @@ const BodyComponent=()=>{
     </p>
     </section>
     <div className="res-container">
-        {filteredRestaurantsArray.map((restaurant) => (
-          <RestaurantCard key={restaurant.id} res_details={restaurant} />
+        {filteredEcommerceArray.map((ecommerce) => (
+          <EcommerceCard key={ecommerce.id} res_details={ecommerce} />
         ))}
       </div>
     </>

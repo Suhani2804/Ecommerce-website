@@ -1,14 +1,14 @@
-import { restaurants } from "../common/restaurants";
+// import { restaurants } from "../common/restaurants";
 
 let searchText = "";
 
 const SearchComponent = (props) => {
-  function filterRestaurants(searchText) {
-    let filteredRestaurants = restaurants.filter((restaurant) =>
-      restaurant.name.toLowerCase().includes(searchText.toLowerCase())
+  function filterEcommerce(searchText) {
+    let filteredEcommerce = props.Ecommerce.filter((ecommerce) =>
+      ecommerce.title.toLowerCase().includes(searchText.toLowerCase())
     );
 
-    props.filteredRestaurants(filteredRestaurants);
+    props.filteredEcommerce(filteredEcommerce);
 
     // add filter function
   }
@@ -17,10 +17,12 @@ const SearchComponent = (props) => {
     <div className="search flexsearch">
       <input
         type="text"
-        onChange={(e) => (searchText = e.target.value)}
-        className="search-text"
-      ></input>
-      <button  onClick={(e) => filterRestaurants(searchText)}>Search</button>
+        onChange={(e) => {
+          searchText = e.target.value;
+          filterEcommerce(searchText);
+        }}  className="search-text"
+        ></input>
+      <button  onClick={(e) => filterEcommerce(searchText)}>Search</button>
     </div>
   );
 };
