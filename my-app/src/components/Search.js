@@ -20,7 +20,8 @@ const SearchComponent = (props) => {
         onChange={(e) => {
           searchText = e.target.value;
           filterEcommerce(searchText);
-        }}  className="search-text"
+        }}  
+        className="search-text"
         ></input>
       <button  onClick={(e) => filterEcommerce(searchText)}>Search</button>
     </div>

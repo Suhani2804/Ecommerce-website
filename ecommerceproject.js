@@ -59,7 +59,7 @@ function createProduct(imageUrl, description) {
 }
 function showProducts(products) {
   products.forEach((element) => {
-    const { thumbnail, title } = element;
+    const {thumbnail,title} = element;
     const product = createProduct(thumbnail, title);
     section2.appendChild(product);
   });

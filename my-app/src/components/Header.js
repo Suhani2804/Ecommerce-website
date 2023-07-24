@@ -1,4 +1,5 @@
 import { useState } from "react";
+import {Link} from "react-router-dom";
 
 const HeaderComponent=()=>{
 
@@ -28,12 +29,19 @@ const HeaderComponent=()=>{
     </form> */}
     
     <ul className="unorderlist1">
-            <li className="border">Home</li>            
-            <li className="border">Cart</li>
-            <li className="border">My orders</li>
-            <li className="border">About</li>
-            <i className="fa-regular fa-cart-shopping border" id="carticon"></i>
-            <li className="border">Cart</li>
+            <li className="border">
+                <Link to="/">Home</Link>
+            </li>
+            <li className="border">
+                <Link to="/About">About</Link>
+            </li>
+            <li className="border">
+                <Link to="/MyOrders">My orders</Link>
+            </li>
+            {/* <i className="fa-regular fa-cart-shopping border" id="carticon"></i> */}
+            {/* <li className="border">
+                <Link to="/Cart">Cart</Link>
+            </li> */}
     </ul>
 
     <button className="login-button" onClick={updateLoginLogoutText}>
@@ -86,8 +94,6 @@ just type in button bootstrap to access this specific command -->
     <h5>Hope you have a great time browsing the website :)</h5>
 </div>
 </section>
-
-
 </div>
 </main>
 </>

@@ -429,3 +429,10 @@ h5
     display:flex;
     justify-content:center;
   }
+
+  .shimmer-card {
+    height: 500px;
+    width: 300px;
+    margin: 10px;
+    background-color: lightgray;
+  }
