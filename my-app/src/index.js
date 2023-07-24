@@ -10,6 +10,8 @@ import EcommerceInfo from './components/EcommerceInfo';
 import MyOrders from './components/MyOrders';
 import BodyComponent from './components/Body';
 import { createBrowserRouter,RouterProvider } from 'react-router-dom';
+import Profile from "./components/Profile";
+import ProfileChild from "./components/ProfileChild";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -24,8 +26,20 @@ const appRouter=createBrowserRouter([
         element: <BodyComponent />,
       },
       {
-        path: "/About",
+        path: "/about",
         element: <About />,
+        children: [
+          {
+            path: "profile",
+            element: <Profile />,
+            children: [
+              {
+                path: "profileChild",
+                element: <ProfileChild />,
+              },
+            ],
+          },
+        ],
       },
       // {
       //   path: "/Cart",
@@ -36,7 +50,7 @@ const appRouter=createBrowserRouter([
         element: <MyOrders/>,
       },
       {
-        path:"/ecommerce/:ecommerceId",
+        path:"/:ecommerceId",
         element:<EcommerceInfo/>,
       }
     ],
