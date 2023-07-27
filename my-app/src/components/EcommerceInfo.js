@@ -6,19 +6,21 @@ import { useState } from "react";
 import Loading from "./Loading";
 
 const EcommerceInfo=()=>{
-    const {ecommerceId}=useParams();
+    const {id}=useParams();
     const[details,setdetails]=useState([]);
     useEffect(()=>
     {
         async function fetchMenu() {
-            const response = await fetch(`${Ecommerce_URL}+'/'+${ecommerceId}`);
+            const response = await fetch(`${Ecommerce_URL}${id}`);
             const EcommerceDetails = await response.json();
-            let stock=EcommerceDetails.stock;
-            setdetails(stock);
+            console.log(EcommerceDetails);
+            let stockans=EcommerceDetails.stock;
+            console.log(stockans);
+            setdetails(stockans);
         }
         fetchMenu();
-    },[ecommerceId]);
-
+    },[id]);
+    console.log(details)
     if(details===0)
     {
         return <h1>No stock for this ecommerce</h1>;

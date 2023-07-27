@@ -119,7 +119,6 @@ const BodyComponent=()=>{
           to={"/ecommerce/"+ecommerce.id}>
         <EcommerceCard key={ecommerce.id} res_details={ecommerce} />
         </Link>
-        
         ))}
       </div>
       </div>

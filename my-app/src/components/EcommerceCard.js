@@ -1,5 +1,5 @@
 
-const RestaurantCard=({res_details})=>{
+const EcommerceCard=({res_details})=>{
     const{
         title,
         description,
@@ -28,4 +28,4 @@ const RestaurantCard=({res_details})=>{
     );
 };
 
-export default RestaurantCard;
+export default EcommerceCard;
