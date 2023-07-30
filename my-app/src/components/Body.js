@@ -16,9 +16,11 @@ const BodyComponent=()=>{
 
     function filterTopRatedEcommerce(){
         let topRatedEcommerce=filteredEcommerceArray.filter(
-            (ecommerce)=>ecommerce.rating>4
+            (ecommerce)=>ecommerce.rating>4.5
         );
         setFilteredEcommerce(topRatedEcommerce)
+
+        
     }
 
     useEffect(() => {
@@ -116,7 +118,7 @@ const BodyComponent=()=>{
       {filteredEcommerceArray.map((ecommerce) => (
           <Link 
           key={ecommerce.id}
-          to={"/ecommerce/"+ecommerce.id}>
+          to={"/" + ecommerce.id}>
         <EcommerceCard key={ecommerce.id} res_details={ecommerce} />
         </Link>
         ))}

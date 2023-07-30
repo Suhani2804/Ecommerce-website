@@ -1,41 +1,57 @@
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { Ecommerce_URL } from "../common/ecommerce_url";
-import EcommerceOneProductInfo from "./EcommerceOneProductInfo";
 import { useState } from "react";
 import Loading from "./Loading";
-
 const EcommerceInfo=()=>{
     const {id}=useParams();
-    const[details,setdetails]=useState([]);
+
+    const[details, setdetails]= useState([]);
+
+
     useEffect(()=>
     {
         async function fetchMenu() {
             const response = await fetch(`${Ecommerce_URL}${id}`);
             const EcommerceDetails = await response.json();
             console.log(EcommerceDetails);
-            let stockans=EcommerceDetails.stock;
+            let stockans=EcommerceDetails;
+            let emptystock=EcommerceDetails.stock;
+
+            if(emptystock===0){
+              console.log("Out of stock");
+            }
             console.log(stockans);
             setdetails(stockans);
         }
         fetchMenu();
     },[id]);
-    console.log(details)
-    if(details===0)
+
+    if(details===undefined)
     {
-        return <h1>No stock for this ecommerce</h1>;
+      console.log("undefined error");
     }
 
-    return details.length === 0 ? (
+    else{
+     
+      return details.length === 0 ? (
         <Loading />
+        
       ) : (
         <>
-          {details.map((details) => (
-            <EcommerceOneProductInfo
-             Details={details}></EcommerceOneProductInfo>
-          ))}
+          <h1>{details.title}</h1>
+          <h1>{details.stock}</h1>
+          <h1>{details.description}</h1>
+          <h1>{details.brand}</h1>
+          <img src={details.thumbnail}></img>
+          <h1>{details.rating}</h1>
         </>
       );
+    }
+    
+
+
+    
 };
 
 export default EcommerceInfo;

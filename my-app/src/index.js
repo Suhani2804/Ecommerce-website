@@ -50,7 +50,7 @@ const appRouter=createBrowserRouter([
         element: <MyOrders/>,
       },
       {
-        path:"/:ecommerceId",
+        path:"/:id",
         element:<EcommerceInfo/>,
       }
     ],
